@@ -1,0 +1,10 @@
+.contact {
+    padding: $padding;
+    padding-bottom: 10rem;
+
+    @include respond(tab) {
+        padding: $padding-small;
+        padding-bottom: 7rem;
+    }
+
+}

@@ -1,0 +1,52 @@
+.btn {
+    
+    &:visited,
+    &:link {
+        display: inline-block;
+        font-size: calc(inherit - .5rem);
+        position: relative;
+        padding: .5rem 1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        background-color: transparent;
+        z-index: 100;
+        
+        border-width: 2px;
+        border-style: solid;
+        border-image: $linear 1 / 1 / 1 / 1;
+        
+        @include text;
+
+        @include respond(tab) {
+            padding: .3rem .5rem;
+        }
+
+    }
+
+    &:hover {
+        -webkit-text-fill-color: $color-white;
+    }
+
+    &:hover::after{
+      width: 100%;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        background-image: $linear;
+        transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+        z-index: -1;
+    }
+
+    &--animation {
+        animation: left .5s;
+        backface-visibility: hidden;
+    }
+
+}

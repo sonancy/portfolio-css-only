@@ -1,0 +1,35 @@
+//Text effect
+
+@mixin text {
+    background-image: $linear;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+//Meadia query
+
+@mixin respond($breakpoint) {
+
+    @if $breakpoint == small-phone {
+        @media (max-width: $bp-smallest) { @content };
+    }
+
+    @if $breakpoint == phone {
+        @media (max-width: $bp-small) { @content };
+    }
+
+    @if $breakpoint == tab {
+        @media (max-width: $bp-medium) { @content };
+    }
+
+    @if $breakpoint == big-tab {
+        @media (max-width: $bp-large) { @content };
+    }
+
+    @if $breakpoint == desktop {
+        @media (max-width: $bp-largest) { @content };
+    }
+
+}
